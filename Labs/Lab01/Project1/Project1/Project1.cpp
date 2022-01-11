@@ -2,10 +2,16 @@
 //
 
 #include <iostream>
+#include <string>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string name;
+    cout << "What is your name?\n";
+    // cin >> name;
+    getline(cin, name);
+    cout << "Hello, " << name << "!\n";
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
