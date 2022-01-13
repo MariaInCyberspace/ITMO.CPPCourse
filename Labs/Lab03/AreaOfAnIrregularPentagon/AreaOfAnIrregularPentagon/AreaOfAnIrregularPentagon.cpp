@@ -27,7 +27,7 @@ double calculateAreaOfATriangle(Point A, Point B, Point C) {
 	return sqrt((halfPerim * (halfPerim - AB) * (halfPerim - AC) * (halfPerim - BC)));
 }
 
-double calculateAreaOfIrregularPentagon(Point	A, Point B, Point C, Point D, Point E)  {
+double calculateAreaOfIrregularPentagon(Point A, Point B, Point C, Point D, Point E)  {
 	double ABE = calculateAreaOfATriangle(A, B, E);
 	double BDE = calculateAreaOfATriangle(B, D, E);
 	double BCD = calculateAreaOfATriangle(B, C, D);
