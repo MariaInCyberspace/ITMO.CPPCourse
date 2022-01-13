@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 
-class Point {
+struct Point {
 public:
 	int x;
 	int y;
@@ -14,31 +14,24 @@ public:
 	}
 };
 
-void getSidesOfATriangle(Point points[3]) {
-	Point p1 = points[0];
-	Point p2 = points[1];
-	Point p3 = points[2];
-	double side1, side2, side3;
-	side1 = sqrt((p2.x - p3.x) * (p2.x - p3.x) + (p2.y - p3.y) * (p2.y - p3.y));
-	side2 = sqrt((p1.x - p3.x) * (p1.x - p3.x) + (p1.y - p3.y) * (p1.y - p3.y));
-	side3 = sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
+double getSideOfATriangle(Point p1, Point p2) {
+	return sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
-void calculateAreaOfATriangle(double perimeter) {
-	double halfPerim = perimeter / 2;
-	double side = perimeter / 3;
-	double area = sqrt((halfPerim * (halfPerim - side) * (halfPerim - side) * (halfPerim - side)));
+double calculateAreaOfATriangle(Point A, Point B, Point C) {
+	double AB = getSideOfATriangle(A, B);
+	double AC = getSideOfATriangle(A, C);
+	double BC = getSideOfATriangle(B, C);
+	double perimeter = AB + AC + BC;
+	double halfPerim = perimeter / 2;	
+	return sqrt((halfPerim * (halfPerim - AB) * (halfPerim - AC) * (halfPerim - BC)));
 }
 
-void calculateAreaOfIrregularPentagon(Point points[5])  {
-	Point A = points[0];	
-	Point B = points[1];
-	Point C = points[2];
-	Point D = points[3];
-	Point E = points[4];
-	Point ABE[] { A, B, E };
-	Point BDE[] { B, D, E };
-	Point BCD[] { B, C, D };
+double calculateAreaOfIrregularPentagon(Point	A, Point B, Point C, Point D, Point E)  {
+	double ABE = calculateAreaOfATriangle(A, B, E);
+	double BDE = calculateAreaOfATriangle(B, D, E);
+	double BCD = calculateAreaOfATriangle(B, C, D);
+	return ABE + BDE + BCD;
 }
 
 
@@ -49,8 +42,7 @@ int main()
 	Point C(14, 10);
 	Point D(19, 6);
 	Point E(17, 1);
-	Point points[] {A, B, C, D, E};
-    std::cout << "Hello World!\n";
-
+	double area = calculateAreaOfIrregularPentagon(A, B, C, D, E);
+	std::cout << "Area of this irregular pentagon is '" << area << "'\n";
 }
 
