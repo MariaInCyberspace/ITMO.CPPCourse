@@ -14,6 +14,20 @@ public:
 	}
 };
 
+void getSidesOfATriangle(Point points[3]) {
+	Point p1 = points[0];
+	Point p2 = points[1];
+	Point p3 = points[2];
+	double side1, side2, side3;
+	side1 = sqrt((p2.x - p3.x) * (p2.x - p3.x) + (p2.y - p3.y) * (p2.y - p3.y));
+}
+
+void calculateAreaOfATriangle(double perimeter) {
+	double halfPerim = perimeter / 2;
+	double side = perimeter / 3;
+	double area = sqrt((halfPerim * (halfPerim - side) * (halfPerim - side) * (halfPerim - side)));
+}
+
 void calculateAreaOfIrregularPentagon(Point points[5])  {
 	Point A = points[0];	
 	Point B = points[1];
