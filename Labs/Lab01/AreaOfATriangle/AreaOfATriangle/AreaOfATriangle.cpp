@@ -12,11 +12,8 @@ int main()
 	cout << "Enter perimeter value\n";
 	cin >> perimeter;
 	double halfPerim = perimeter / 2;
-	int half = perimeter / 2;
-	int side01 = half;
-	int side02 = half;
-	double base = (halfPerim - half) * 2;
-	double area = sqrt((halfPerim * (halfPerim - side01) * (halfPerim - side02) * (halfPerim - base)));
+	int side = perimeter / 3;
+	double area = sqrt((halfPerim * (halfPerim - side) * (halfPerim - side) * (halfPerim - side)));
 	cout << "\nArea of the triangle is " << area << "\n";
 }
 
