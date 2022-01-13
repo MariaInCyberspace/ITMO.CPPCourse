@@ -20,6 +20,8 @@ void getSidesOfATriangle(Point points[3]) {
 	Point p3 = points[2];
 	double side1, side2, side3;
 	side1 = sqrt((p2.x - p3.x) * (p2.x - p3.x) + (p2.y - p3.y) * (p2.y - p3.y));
+	side2 = sqrt((p1.x - p3.x) * (p1.x - p3.x) + (p1.y - p3.y) * (p1.y - p3.y));
+	side3 = sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
 void calculateAreaOfATriangle(double perimeter) {
