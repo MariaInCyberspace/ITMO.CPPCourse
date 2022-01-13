@@ -35,5 +35,6 @@ int main()
 	Point E(17, 1);
 	Point points[] {A, B, C, D, E};
     std::cout << "Hello World!\n";
+
 }
 
