@@ -4,34 +4,30 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> getBinaryRepresentation(int num, std::vector<int> &binary) {
+void getBinaryRepresentation(int num, std::vector<int> &binary) {
     int remainder;
     if (num > 0) {
-        while (num > 0) {
-            remainder = num % 2;
-            binary.push_back(remainder);
-            return getBinaryRepresentation(num / 2, binary);
-        }
+        remainder = num % 2;
+        getBinaryRepresentation(num / 2, binary);
+        binary.push_back(remainder);
     }
-    else {
-        while (num < 0) {
-            remainder = num % 2;
-            binary.push_back(remainder);
-            return getBinaryRepresentation(num / 2, binary);
-        }
+    else if (num < 0) {
+        remainder = num % 2;
+        getBinaryRepresentation(num / 2, binary);
+        binary.push_back(remainder);   
     }
-    return binary;
 }
 
 long convertToBinary(int num) {
     long b = 0;
     std::vector<int> binary;
     getBinaryRepresentation(num, binary);
-    for (int i = binary.size() - 1; i >= 0; i--) {
-        b += binary[i] * pow(10, i);
+    for (int i = 0; i < binary.size(); i++) {
+        b += binary[i] * pow(10, binary.size() - 1 - i);
     };
     return b;
 }
+
 
 int main()
 {
@@ -41,5 +37,6 @@ int main()
     std::cin >> input;
     inBinary = convertToBinary(input);
     std::cout << input << " in binary is '" << inBinary << "'\n";
+
 }
 
