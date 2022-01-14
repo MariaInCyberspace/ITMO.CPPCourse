@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> getBinaryRepresentation(int num, std::vector<int> binary) {
+std::vector<int> getBinaryRepresentation(int num, std::vector<int> &binary) {
     int remainder;
     if (num > 0) {
         while (num > 0) {
@@ -25,8 +25,8 @@ std::vector<int> getBinaryRepresentation(int num, std::vector<int> binary) {
 
 long convertToBinary(int num) {
     long b = 0;
-    std::vector<int> bin;
-    std::vector<int> binary = getBinaryRepresentation(num, bin);
+    std::vector<int> binary;
+    getBinaryRepresentation(num, binary);
     for (int i = binary.size() - 1; i >= 0; i--) {
         b += binary[i] * pow(10, i);
     };
