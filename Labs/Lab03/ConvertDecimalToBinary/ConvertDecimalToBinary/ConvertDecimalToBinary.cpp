@@ -6,10 +6,19 @@
 
 std::vector<int> getBinaryRepresentation(int num, std::vector<int> binary) {
     int remainder;
-    while (num > 0) {
-        remainder = num % 2;
-        binary.push_back(remainder);            
-        return getBinaryRepresentation(num / 2, binary);   
+    if (num > 0) {
+        while (num > 0) {
+            remainder = num % 2;
+            binary.push_back(remainder);
+            return getBinaryRepresentation(num / 2, binary);
+        }
+    }
+    else {
+        while (num < 0) {
+            remainder = num % 2;
+            binary.push_back(remainder);
+            return getBinaryRepresentation(num / 2, binary);
+        }
     }
     return binary;
 }
@@ -28,7 +37,6 @@ int main()
 {
     int input;
     long inBinary;
-    std::cout << "This converter is only for positive numbers\n";
     std::cout << "Input a number, please:\n";
     std::cin >> input;
     inBinary = convertToBinary(input);
