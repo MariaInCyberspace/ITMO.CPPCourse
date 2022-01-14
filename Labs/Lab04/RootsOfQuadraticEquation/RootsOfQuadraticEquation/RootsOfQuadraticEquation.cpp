@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-int findRootsOfAQuadraticEquation(double a, double b, double c, double& res1, double& res2)
+int findRootsOfAQuadraticEquation_internal(double a, double b, double c, double& res1, double& res2)
 {
     double determinant = pow(b, 2) - 4 * a * c;
     double x, x1, x2, imag;
@@ -32,10 +32,22 @@ int findRootsOfAQuadraticEquation(double a, double b, double c, double& res1, do
     }
 }
 
+void findRootsOfAQuadraticEquation(double a, double b, double c) {
+    double res1, res2;
+    int flag = findRootsOfAQuadraticEquation_internal(a, b, c, res1, res2);
+    if (flag == 1) {
+        std::cout << res1 << ", "<< res2 << std::endl;
+    }
+    else if (flag == -1) {
+        std::cout << "No real solutions"<< std::endl;
+    }
+    else {
+        std::cout << res1 << std::endl;
+    }
+}
+
 
 int main()
 {
-    double res1, res2;
-    findRootsOfAQuadraticEquation(4, 5, 1, res1, res2);
-    std::cout << res1 << ", "<< res2 << "\n";
+    findRootsOfAQuadraticEquation(3, 0, 1);
 }
