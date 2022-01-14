@@ -28,7 +28,7 @@ int main()
 {
     int input;
     long inBinary;
-    std::cout << "This convertor is only for positive numbers\n";
+    std::cout << "This converter is only for positive numbers\n";
     std::cout << "Input a number, please:\n";
     std::cin >> input;
     inBinary = convertToBinary(input);
