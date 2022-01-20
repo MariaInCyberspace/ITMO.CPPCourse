@@ -26,7 +26,7 @@ public:
         }
 
     }
-    Time addTimeInterval(Time timeToAdd) {
+    Time addTimeInterval(const Time& timeToAdd) {
         
         int h = hours + timeToAdd.hours, 
             m = minutes + timeToAdd.minutes, 
@@ -45,7 +45,7 @@ public:
         return {h, m, s};
     }
 
-    Time subtractTimeInterval(Time timeToSubtract) {
+    Time subtractTimeInterval(const Time& timeToSubtract) {
         int h = hours - timeToSubtract.hours,
             m = minutes - timeToSubtract.minutes,
             s = seconds - timeToSubtract.seconds;
@@ -65,7 +65,7 @@ public:
     }
 };
 
-Time convert(std::string input) {
+Time convert(std::string& input) {
     return { stoi(input.substr(0, 2)), stoi(input.substr(3, 5)), stoi(input.substr(6, 7)) };
 }
 
