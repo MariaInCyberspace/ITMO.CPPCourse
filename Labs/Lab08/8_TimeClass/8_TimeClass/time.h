@@ -7,8 +7,8 @@ private:
     int hours;
     int minutes;
     int seconds;
-    Time addTimeInterval(Time&) const;
-    Time subtractTimeInterval(Time&) const;
+    Time addTimeInterval(const Time&) const;
+    Time subtractTimeInterval(const Time&) const;
 public:
     int getHours() const;
     int getMinutes() const;
@@ -19,6 +19,6 @@ public:
     void displayHalf();
     void display();
 
-    static Time addTimeIntervals(Time& t1, Time& t2);
-    static Time subtractTimeIntervals(Time& t1, Time& t2);
+    static Time addTimeIntervals(const Time& t1, const Time& t2);
+    static Time subtractTimeIntervals(const Time& t1, const Time& t2);
 };
