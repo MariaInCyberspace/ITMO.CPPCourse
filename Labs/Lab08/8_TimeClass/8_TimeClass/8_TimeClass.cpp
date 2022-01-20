@@ -21,4 +21,24 @@ int main()
     //Time t4 = t3.subtractTimeIntervals(t3, t1);
     t3.display();
     t4.display();
+
+    char input[9];
+    std::cout << "\nInput time: (hh:mm:ss)\n";
+    std::cin.getline(input, 9);
+    std::string s = &input[0];
+
+    Time tt = convert(s);
+
+    std::cout << tt.getHours() << ":" << tt.getMinutes() << ":" << tt.getSeconds() << std::endl;
+    Time to_add(21, 44, 50);
+    Time ttt = Time::addTimeIntervals(tt, to_add);
+    std::cout << ttt.getHours() << ":" << ttt.getMinutes() << ":" << ttt.getSeconds() << std::endl;
+
+    Time ti{ 21, 10, 38 };
+    Time ti2{ 24, 10, 38 };
+    Time ti3 = Time::addTimeIntervals(ti, ti2);
+    std::cout << ti3.getHours() << ":" << ti3.getMinutes() << ":" << ti3.getSeconds() << std::endl;
+    Time tti(15, 32, 64);
+    std::cout << tti.getHours() << ":" << tti.getMinutes() << ":" << tti.getSeconds() << std::endl;
+    
 }
