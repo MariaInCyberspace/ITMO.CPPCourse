@@ -14,15 +14,15 @@ public:
         minutes = m;
         seconds = s;
         if (s >= 60) {
-            seconds = s - 60;
+            seconds -= 60;
             minutes += 1;
         }
         if (m >= 60) {
-            minutes = m - 60;
+            minutes -= 60;
             hours += 1;
         }
         if (h >= 24) {
-            hours = h - 24;
+            hours -= 24;
         }
 
     }
@@ -32,15 +32,15 @@ public:
             m = minutes + timeToAdd.minutes, 
             s = seconds + timeToAdd.seconds;
         if (seconds + timeToAdd.seconds >= 60) {
-            s = (seconds + timeToAdd.seconds) - 60;
+            s -= 60;
             m += 1;
         }
         if (minutes + timeToAdd.minutes >= 60) {
-            m = (minutes + timeToAdd.minutes) - 60;
+            m -= 60;
             h += 1;
         }
         if (hours + timeToAdd.hours >= 24) {
-            h = (hours + timeToAdd.hours) - 24;
+            h -= 24;
         }
         return {h, m, s};
     }
@@ -81,17 +81,17 @@ void ex1() {
 }
 
 void test() {
-    Time t{ 21, 10, 38 };
-    Time t2{ 24, 10, 38 };
-    Time t3 = t.subtractTimeInterval(t2);
+    Time t{ 15, 55, 32 };
+    Time t2{ 21, 44, 50 };
+    Time t3 = t.addTimeInterval(t2);
     std::cout << t3.hours << ":" << t3.minutes << ":" << t3.seconds << std::endl;
-    Time tt(15, 32, 64);
+    Time tt(15, 55 + 44, 64);
     std::cout << tt.hours << ":" << tt.minutes << ":" << tt.seconds << std::endl;
 }
 
 int main()
 {
-    ex1();
-    test();
+   ex1();
+   test();
 }
 
