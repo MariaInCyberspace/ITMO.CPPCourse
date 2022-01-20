@@ -26,7 +26,7 @@ public:
         }
 
     }
-    Time addTimeInterval(const Time& timeToAdd) {
+    Time& addTimeInterval(const Time& timeToAdd) {
         
         int h = hours + timeToAdd.hours, 
             m = minutes + timeToAdd.minutes, 
@@ -42,10 +42,11 @@ public:
         if (hours + timeToAdd.hours >= 24) {
             h -= 24;
         }
-        return {h, m, s};
+        Time t(h, m, s);
+        return t;
     }
 
-    Time subtractTimeInterval(const Time& timeToSubtract) {
+    Time& subtractTimeInterval(const Time& timeToSubtract) {
         int h = hours - timeToSubtract.hours,
             m = minutes - timeToSubtract.minutes,
             s = seconds - timeToSubtract.seconds;
@@ -60,13 +61,14 @@ public:
         if (hours - timeToSubtract.hours < 0) {
             h = 24 + (hours - timeToSubtract.hours);
         }
-        
-        return { h, m, s };
+        Time t(h, m, s);
+        return t;
     }
 };
 
-Time convert(std::string& input) {
-    return { stoi(input.substr(0, 2)), stoi(input.substr(3, 5)), stoi(input.substr(6, 7)) };
+Time& convert(std::string& input) {
+    Time t(stoi(input.substr(0, 2)), stoi(input.substr(3, 5)), stoi(input.substr(6, 7)));
+    return t;
 }
 
 void ex1() {

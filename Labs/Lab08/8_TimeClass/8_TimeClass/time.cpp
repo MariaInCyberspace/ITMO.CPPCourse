@@ -35,7 +35,7 @@ int Time::getSeconds() const {
     return Time::seconds;
 };
 
-Time Time::addTimeInterval(const Time& timeToAdd) const {
+Time& Time::addTimeInterval(const Time& timeToAdd) const {
     int h = Time::hours + timeToAdd.hours,
         m = Time::minutes + timeToAdd.minutes,
         s = Time::seconds + timeToAdd.seconds;
@@ -50,10 +50,11 @@ Time Time::addTimeInterval(const Time& timeToAdd) const {
     if (h >= 24) {
         h -= 24;
     }
-    return { h, m, s };
+    Time t(h, m, s);
+    return t;
 }
 
-Time Time::subtractTimeInterval(const Time& timeToSubtract) const {
+Time& Time::subtractTimeInterval(const Time& timeToSubtract) const {
     int h = Time::hours - timeToSubtract.hours,
         m = Time::minutes - timeToSubtract.minutes,
         s = Time::seconds - timeToSubtract.seconds;
@@ -68,8 +69,8 @@ Time Time::subtractTimeInterval(const Time& timeToSubtract) const {
     if (h < 0) {
         h += 24;
     }
-
-    return { h, m, s };
+    Time t(h, m, s);
+    return t;
 }
 
 void Time::displayHalf() {
@@ -79,11 +80,11 @@ void Time::display() {
     std::cout << Time::hours << ":" << Time::minutes << ":" << Time::seconds << std::endl;
 }
 
-Time Time::addTimeIntervals(const Time& t1, const Time& t2) {
+Time& Time::addTimeIntervals(const Time& t1, const Time& t2) {
     return t1.addTimeInterval(t2);
 }
 
-Time Time::subtractTimeIntervals(const Time& t1, const Time& t2) {
+Time& Time::subtractTimeIntervals(const Time& t1, const Time& t2) {
     return t1.subtractTimeInterval(t2);
 }
 
