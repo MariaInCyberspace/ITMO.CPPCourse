@@ -18,6 +18,7 @@ int main()
     Time t2(17, 10, 50);
     Time t3 = Time::addTimeIntervals(t1, t2);
     Time t4 = Time::subtractTimeIntervals(t3, t1);
+    //Time t4 = t3.subtractTimeIntervals(t3, t1);
     t3.display();
     t4.display();
 }

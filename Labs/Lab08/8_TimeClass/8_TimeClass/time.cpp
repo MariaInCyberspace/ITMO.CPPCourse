@@ -3,80 +3,80 @@
 #include "time.h"
 
 Time::Time() {
-    hours = 0;
-    minutes = 0;
-    seconds = 0;
+    Time::hours = 0;
+    Time::minutes = 0;
+    Time::seconds = 0;
 }
 
 Time::Time(int h, int m, int s) {
-    hours = h;
-    minutes = m;
-    seconds = s;
+    Time::hours = h;
+    Time::minutes = m;
+    Time::seconds = s;
     if (s >= 60) {
-        seconds = s - 60;
-        minutes += 1;
+        Time::seconds = s - 60;
+        Time::minutes += 1;
     }
     if (m >= 60) {
-        minutes = m - 60;
-        hours += 1;
+        Time::minutes = m - 60;
+        Time::hours += 1;
     }
     if (h >= 24) {
-        hours = h - 24;
+        Time::hours = h - 24;
     }
 }
 
 int Time::getHours() const {
-    return hours;
+    return Time::hours;
 }
 int Time::getMinutes() const {
-    return minutes;
+    return Time::minutes;
 };
 int Time::getSeconds() const {
-    return seconds;
+    return Time::seconds;
 };
 
 Time Time::addTimeInterval(Time timeToAdd) const {
-    int h = hours + timeToAdd.hours,
-        m = minutes + timeToAdd.minutes,
-        s = seconds + timeToAdd.seconds;
-    if (seconds + timeToAdd.seconds >= 60) {
-        s = (seconds + timeToAdd.seconds) - 60;
+    int h = Time::hours + timeToAdd.hours,
+        m = Time::minutes + timeToAdd.minutes,
+        s = Time::seconds + timeToAdd.seconds;
+    if (Time::seconds + timeToAdd.seconds >= 60) {
+        s = (Time::seconds + timeToAdd.seconds) - 60;
         m += 1;
     }
-    if (minutes + timeToAdd.minutes >= 60) {
-        m = (minutes + timeToAdd.minutes) - 60;
+    if (Time::minutes + timeToAdd.minutes >= 60) {
+        m = (Time::minutes + timeToAdd.minutes) - 60;
         h += 1;
     }
-    if (hours + timeToAdd.hours >= 24) {
-        h = (hours + timeToAdd.hours) - 24;
+    if (Time::hours + timeToAdd.hours >= 24) {
+        h = (Time::hours + timeToAdd.hours) - 24;
     }
     return { h, m, s };
 }
 
 Time Time::subtractTimeInterval(Time timeToSubtract) const {
-    int h = hours - timeToSubtract.hours,
-        m = minutes - timeToSubtract.minutes,
-        s = seconds - timeToSubtract.seconds;
-    if (seconds - timeToSubtract.seconds < 0) {
-        s = 60 + (seconds - timeToSubtract.seconds);
+    int h = Time::hours - timeToSubtract.hours,
+        m = Time::minutes - timeToSubtract.minutes,
+        s = Time::seconds - timeToSubtract.seconds;
+    if (Time::seconds - timeToSubtract.seconds < 0) {
+        s = 60 + (Time::seconds - timeToSubtract.seconds);
         m -= 1;
     }
-    if (minutes - timeToSubtract.minutes < 0) {
-        m = 60 + (minutes + timeToSubtract.minutes);
+    if (Time::minutes - timeToSubtract.minutes < 0) {
+        m = 60 + (Time::minutes + timeToSubtract.minutes);
         h -= 1;
     }
-    if (hours - timeToSubtract.hours < 0) {
-        h = 24 + (hours - timeToSubtract.hours);
+    if (Time::hours - timeToSubtract.hours < 0) {
+        h = 24 + (Time::hours - timeToSubtract.hours);
     }
 
     return { h, m, s };
 }
 
 void Time::displayHalf() {
-    std::cout << hours - 12 << ":" << minutes << ":" << seconds << std::endl;
+    std::cout << Time::hours - 12 << ":" << Time::minutes << ":" << Time::seconds << std::endl;
 }
 void Time::display() {
-    std::cout << hours << ":" << minutes << ":" << seconds << std::endl;
+    std::cout << Time::hours << ":" << Time::minutes << ":" << Time::seconds << std::endl;
 }
 
 Time Time::addTimeIntervals(Time t1, Time t2) {
