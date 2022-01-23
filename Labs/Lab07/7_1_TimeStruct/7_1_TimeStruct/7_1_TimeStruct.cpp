@@ -24,20 +24,16 @@ public:
         Time tt(h, m, s);
         return tt;
     }
-    Time addTimeInterval(const Time& timeToAdd) {
-        Time t;
+    Time& addTimeInterval(const Time& timeToAdd) {
+        static Time t;
         t.hours = hours + timeToAdd.hours;
         t.minutes = minutes + timeToAdd.minutes;
         t.seconds = seconds + timeToAdd.seconds;
-        /*std::cout << 1 << ": " << hours << ": " << minutes << ": " << seconds << std::endl;
-        std::cout << 2 << ": " << timeToAdd.hours << ": " << timeToAdd.minutes << ": " << timeToAdd.seconds << std::endl;
-        std::cout << 3 << ": " << h << ": " << m << ": " << s << std::endl;
-        std::cout << 4 << ": " << t.hours << ": " << t.minutes << ": " << t.seconds << std::endl;*/
         return t;
     }
 
-    Time subtractTimeInterval(const Time& timeToSubtract) {
-        Time t;
+    Time& subtractTimeInterval(const Time& timeToSubtract) {
+        static Time t;
         t.hours = hours - timeToSubtract.hours;
         t.minutes = minutes - timeToSubtract.minutes;
         t.seconds = seconds - timeToSubtract.seconds;
