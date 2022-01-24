@@ -100,6 +100,10 @@ void test2() {
     Time t2{ 10, 10, 10 };
     Time tt = t.addTimeInterval(t1).addTimeInterval(t2).convertToTime();
     std::cout << tt.hours << ":" << tt.minutes << ":" << tt.seconds << std::endl;
+    Time t3{ 10, 10, 10 };
+    Time t4{ 10, 10, 10 };
+    Time ttt = t3.addTimeInterval(t4).convertToTime();
+    std::cout << ttt.hours << ":" << ttt.minutes << ":" << ttt.seconds << std::endl;
 }
 
 int main()
