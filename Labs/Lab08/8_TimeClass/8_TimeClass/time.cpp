@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <tuple>
 #include "time.h"
 
 Time::Time() {
@@ -9,20 +10,11 @@ Time::Time() {
 }
 
 Time::Time(int h, int m, int s) {
-    Time::hours = h;
-    Time::minutes = m;
-    Time::seconds = s;
-    if (s >= 60) {
-        Time::seconds -= 60;
-        Time::minutes += 1;
-    }
-    if (m >= 60) {
-        Time::minutes -= 60;
-        Time::hours += 1;
-    }
-    if (h >= 24) {
-        Time::hours -= 24;
-    }
+    int hh, mm, ss;
+    std::tie(hh, mm, ss) = convertToTime_internal(h, m, s);
+    hours = hh;
+    minutes = mm;
+    seconds = ss;
 }
 
 int Time::getHours() const {
@@ -36,40 +28,55 @@ int Time::getSeconds() const {
 };
 
 Time& Time::addTimeInterval(const Time& timeToAdd) const {
-    int h = Time::hours + timeToAdd.hours,
-        m = Time::minutes + timeToAdd.minutes,
-        s = Time::seconds + timeToAdd.seconds;
-    if (s >= 60) {
-        s -= 60;
-        m += 1;
-    }
-    if (m >= 60) {
-        m -= 60;
-        h += 1;
-    }
-    if (h >= 24) {
-        h -= 24;
-    }
-    Time t(h, m, s);
+    static Time t;
+    t.hours = hours + timeToAdd.hours;
+    t.minutes = minutes + timeToAdd.minutes;
+    t.seconds = seconds + timeToAdd.seconds;
     return t;
 }
 
 Time& Time::subtractTimeInterval(const Time& timeToSubtract) const {
-    int h = Time::hours - timeToSubtract.hours,
-        m = Time::minutes - timeToSubtract.minutes,
-        s = Time::seconds - timeToSubtract.seconds;
-    if (s < 0) {
-        s += 60;
-        m -= 1;
+    static Time t;
+    t.hours = hours - timeToSubtract.hours;
+    t.minutes = minutes - timeToSubtract.minutes;
+    t.seconds = seconds - timeToSubtract.seconds;
+    return t;
+}
+
+std::tuple<int, int, int> Time::convertToTime_internal(int h, int m, int s)
+{
+    int hh = h, mm = m, ss = s;
+    const int min_sec = (h > 0 && m > 0 && s > 0) ? 60 : -60;
+    const int hrs = (h > 0 && m > 0 && s > 0) ? 24 : -24;
+    const int one = (h > 0 && m > 0 && s > 0) ? 1 : -1;
+    if (s >= 60 || s < 0) {
+        while (ss < 0 || ss >= 60) {
+            ss -= min_sec;
+            mm += one;
+        }
     }
-    if (m < 0) {
-        m += 60;
-        h -= 1;
+    if (m >= 60 || m < 0) {
+        while (mm < 0 || mm >= 60) {
+            mm -= min_sec;
+            hh += one;
+        }
     }
-    if (h < 0) {
-        h += 24;
+    if (h >= 24 || h < 0) {
+        while (hh >= 24 || hh < 0) {
+            hh -= hrs;
+        }
     }
-    Time t(h, m, s);
+
+    return std::make_tuple(hh, mm, ss);
+}
+
+Time& Time::convertToTime() {
+    int h, m, s;
+    std::tie(h, m, s) = convertToTime_internal(hours, minutes, seconds);
+    static Time t;
+    t.hours = h;
+    t.minutes = m;
+    t.seconds = s;
     return t;
 }
 
@@ -80,11 +87,5 @@ void Time::display() {
     std::cout << Time::hours << ":" << Time::minutes << ":" << Time::seconds << std::endl;
 }
 
-Time& Time::addTimeIntervals(const Time& t1, const Time& t2) {
-    return t1.addTimeInterval(t2);
-}
 
-Time& Time::subtractTimeIntervals(const Time& t1, const Time& t2) {
-    return t1.subtractTimeInterval(t2);
-}
 

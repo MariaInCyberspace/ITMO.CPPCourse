@@ -21,9 +21,8 @@ int main()
     t.displayHalf();
     Time t1(11, 15, 45);
     Time t2(17, 10, 50);
-    Time t3 = Time::addTimeIntervals(t1, t2);
-    Time t4 = Time::subtractTimeIntervals(t3, t1);
-    //Time t4 = t3.subtractTimeIntervals(t3, t1);
+    Time t3 = t1.addTimeInterval(t2).convertToTime();
+    Time t4 = t3.subtractTimeInterval(t1).convertToTime();
     t3.display();
     t4.display();
 }
