@@ -2,45 +2,7 @@
 //
 
 #include <iostream>
-
-class Student {
-private:
-    std::string _firstName;
-    std::string _lastName;
-    int _scores[5];
-    double _averageScore;
-public:
-    void setFirstName(std::string firstName) {
-        _firstName = firstName;
-    }
-
-    std::string getFirstName() {
-        return _firstName;
-    }
-
-    void setLastName(std::string lastName) {
-        _lastName = lastName;
-    }
-
-    std::string getLastName() {
-        return _lastName;
-    }
-
-    void setScores(int scores[]) {
-        for (int i = 0; i < 5; i++) {
-            _scores[i] = scores[i];
-        }
-    }
-
-    void setAverageScore(double averageScore) {
-        _averageScore = averageScore;
-    }
-
-    double getAverageScore() {
-        return _averageScore;
-    }
-
-};
+#include "student.h"
 
 int main()
 {
