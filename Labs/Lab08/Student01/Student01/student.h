@@ -8,6 +8,8 @@ private:
     int _scores[5];
     double _averageScore;
 public:
+    Student(std::string, std::string);
+    ~Student();
     void setFirstName(std::string firstName);
 
     std::string getFirstName();
@@ -21,6 +23,7 @@ public:
     void setAverageScore(double averageScore);
 
     double getAverageScore();
+    void save();
 };
 
 
