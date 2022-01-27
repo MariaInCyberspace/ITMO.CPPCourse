@@ -25,12 +25,17 @@ void test() {
             sum += score;
         }
         Student* student01 = new Student(fName, lName);
-        student01->setAverageScore(sum / 5);
-        student01->setScores(scores);
-
+        try {
+            student01->setAverageScore(sum / 5);
+            student01->setScores(scores);
+        }
+        catch (Student::ExScore& ex) {
+            std::cout << "\nInitialization error " << ex._origin;
+            std::cout << "\nThe score " << ex._iValue << " is not allowed\n";
+        }
         std::cout << "Student's name is: " << student01->getFirstName() << " " << student01->getLastName()
             << "\nAverage score is: " << student01->getAverageScore() << std::endl;
-
+        
         delete student01;
         count += 1;
     }    

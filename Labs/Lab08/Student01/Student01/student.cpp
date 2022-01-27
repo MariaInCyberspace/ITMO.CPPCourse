@@ -31,6 +31,9 @@ std::string Student::getLastName() {
 
 void Student::setScores(int scores[]) {
     for (int i = 0; i < 5; i++) {
+        if (scores[i] > 5) {
+            throw ExScore("in setScores()", scores[i]);
+        }
         _scores[i] = scores[i];
     }
 }
@@ -54,3 +57,8 @@ void Student::save()
     out.close();
 }
 
+Student::ExScore::ExScore(std::string origin, int iValue)
+{
+    Student::ExScore::_origin = origin;
+    Student::ExScore::_iValue = iValue;
+}

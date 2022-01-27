@@ -8,6 +8,12 @@ private:
     int _scores[5];
     double _averageScore;
 public:
+    class ExScore {
+    public:
+        std::string _origin;
+        int _iValue;
+        ExScore(std::string, int);
+    };
     Student(std::string, std::string);
     ~Student();
     void setFirstName(std::string firstName);
