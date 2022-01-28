@@ -51,6 +51,7 @@ Time::Time()
     Time::seconds = 0;
 }
 
+
 Time::Time(int h, int m, int s)
 {
     if (s >= 60) throw ExTime("Time(int, int, int)", s);
