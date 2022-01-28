@@ -3,8 +3,7 @@
 
 Triangle::Triangle(double s1, double s2, double s3)
 {
-    bool isIllegal = false;
-    double side;
+    bool isIllegal = false; double side;
     if (s1 > s2 + s3) { side = s1; isIllegal = true; };
     if (s2 > s1 + s3) { side = s2; isIllegal = true; };
     if (s3 > s2 + s1) { side = s3; isIllegal = true; };
