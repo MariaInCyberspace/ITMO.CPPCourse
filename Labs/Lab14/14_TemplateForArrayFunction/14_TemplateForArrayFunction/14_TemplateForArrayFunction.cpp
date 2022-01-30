@@ -18,7 +18,7 @@ int main()
     int intArr[]{ 1, 1, 1, 1, 1 };
     double doubleArr[]{ 1.1, 1.1, 1.2, 1.1, 1.1 };
     long longArr[]{ 1, 2, 1, 3, 1 };
-    char charArr[] = "GeeksforGeeks";
+    char charArr[] = "brrrrr";
 
     std::cout << averageValue(intArr, 5) << "\n";
     std::cout << averageValue(doubleArr, 5) << "\n";
