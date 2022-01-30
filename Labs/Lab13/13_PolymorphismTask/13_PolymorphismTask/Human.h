@@ -9,6 +9,6 @@ private:
 public:
 	Human(std::string _firstName, std::string _secondName, std::string _lastName);
 	std::string getFullName();
-	virtual std::string getInfo();
+	virtual std::string getInfo() = 0;
 };
 

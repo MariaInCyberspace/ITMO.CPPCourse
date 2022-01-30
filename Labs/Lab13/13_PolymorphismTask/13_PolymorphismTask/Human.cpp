@@ -14,8 +14,4 @@ std::string Human::getFullName()
 	return fullName.str();
 }
 
-std::string Human::getInfo()
-{
-	return "human";
-}
 
