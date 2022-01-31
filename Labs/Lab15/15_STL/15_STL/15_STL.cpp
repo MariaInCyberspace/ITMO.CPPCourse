@@ -31,7 +31,7 @@ int main()
 	}
 	for (auto s = scores.begin(); s != scores.end(); s++)
 	{
-		std::cout << s->first << ": " << s->second << std::endl;
+		std::cout << s->first << "'s score is: '" << s->second  << "'" << std::endl;
 	}
 }
 
