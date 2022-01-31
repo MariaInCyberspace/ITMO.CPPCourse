@@ -141,13 +141,25 @@
   <ItemGroup>
     <ClCompile Include="AddressBook.cpp" />
     <ClCompile Include="Colleague.cpp" />
+    <ClCompile Include="ContactInfo.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="FamilyMember.cpp" />
+    <ClCompile Include="Literals.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Colleague.h" />
+    <ClInclude Include="ContactInfo.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="FamilyMember.h" />
+    <ClInclude Include="Literals.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="Teacher.h" />
+    <ClInclude Include="View.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

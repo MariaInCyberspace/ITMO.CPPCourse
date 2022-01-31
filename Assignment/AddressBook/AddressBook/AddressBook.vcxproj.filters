@@ -13,30 +13,84 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Model">
+      <UniqueIdentifier>{9311396b-34cb-4a9a-b970-027cac48591f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Model">
+      <UniqueIdentifier>{0e760176-2cb1-4893-a977-48403d94b0a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\View">
+      <UniqueIdentifier>{03f152e4-64e3-4692-9d24-097c4d7de0e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Controller">
+      <UniqueIdentifier>{ca9c1db0-caba-45d1-ad71-1a7b494c540a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\View">
+      <UniqueIdentifier>{48f8549b-1aed-4fd5-ba0b-7de06416539d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Controller">
+      <UniqueIdentifier>{fee75c6f-5c74-4ee5-b0a2-3c74deab2be9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddressBook.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Person.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Model</Filter>
     </ClCompile>
     <ClCompile Include="Colleague.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Model</Filter>
     </ClCompile>
     <ClCompile Include="Student.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Teacher.cpp">
+      <Filter>Исходные файлы\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ContactInfo.cpp">
+      <Filter>Исходные файлы\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Исходные файлы\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>Исходные файлы\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Literals.cpp">
+      <Filter>Исходные файлы\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="FamilyMember.cpp">
+      <Filter>Исходные файлы\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Person.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Colleague.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactInfo.h">
+      <Filter>Файлы заголовков\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>Файлы заголовков\Model</Filter>
     </ClInclude>
     <ClInclude Include="Student.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Teacher.h">
+      <Filter>Файлы заголовков\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Файлы заголовков\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>Файлы заголовков\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Literals.h">
+      <Filter>Файлы заголовков\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="FamilyMember.h">
+      <Filter>Файлы заголовков\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

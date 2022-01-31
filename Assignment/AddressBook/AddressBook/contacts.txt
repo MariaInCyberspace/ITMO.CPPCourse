@@ -1,2 +1,30 @@
-Bill Bower, accountant from Capital Ind.: 555-456-456; billbower@me.com
-Chris Milton, student studying biology at Some Uni: 555-321-321; mil@me.com
+
+Bill Bower, accountant from Capital Ind.: 
+	555-456-456; 	billbower@me.com
+
+Chris Milton, student studying biology at Some Uni: 
+	555-321-321; 	mil@me.com
+
+Bao Miyagi, professor of chinese martial arts at Self-Employed: 
+	123-123-123; 	miyagi@kickass.com
+
+Bill Barnes, professor from Bigind: 
+	123-123-12-12; 	billbarnes@me.com
+
+Jess Miles, student studying biology at Some: 
+	123-123-12-12; 	jj@me.com
+
+Phil Noel, IT_spec from Meyers_corp: 
+	123-123-12-12; 	phil@me.com
+
+b b, sdsd asd from asdf hhhh jjjj: 
+	1212122; 	sdfsdfds
+
+Jess Noel, student studying biology at Some Uni: 
+	123-123-12-12; 	jj@me.com
+
+Michael Stevens, professor of economics at Some University: 
+	555-329-02-02; 	mstevens@me.com
+
+Monika Right, nurse, my cousin: 
+	123-123-12-12; 	monikarght@me.com
