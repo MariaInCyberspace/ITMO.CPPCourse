@@ -7,7 +7,7 @@ struct Literals {
 	const std::string CONTINUE_PROMPT = "Would you like to continue adding contacts? ('y'/'n')";
 
 	const std::string CHOOSE_CATEGORY = "Please select contact category: \
-		\n'c' - Colleague\n't' - Teacher\n's' - Student\n'f' - family member\n";
+		\n'c' - Colleague\n't' - Teacher\n's' - Student\n'f' - Family member\n";
 	const std::string FIRST_NAME = "Enter first name:\n";
 	const std::string LAST_NAME = "Enter last name:\n";
 	const std::string OCCUPATION = "Enter occupation:\n";
